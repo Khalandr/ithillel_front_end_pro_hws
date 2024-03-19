@@ -1,0 +1,52 @@
+<!--Створити репозиторій із файлом index.html.-->
+<!--Додати туди невеликий скрипт, мета якого – вивести всі відомі вам типи даних у консоль. Використовуючи оператор typeof та console.log-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Перелік типів</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data types</h1>
+    <script>
+        let str=`This is string`;
+        console.log(`The variable "str" has ${typeof str} data type and equal to "${str}"`);
+        let num = 666;
+        console.log(`The variable "num" has ${typeof num} data type and equal to "${num}"`);
+        let bigint = 1234567890123456789012345678901234567890n;
+        console.log(`The variable "bigint" has ${typeof bigint} data type and equal to "${bigint}"`);
+        let bool = true;
+        console.log(`The variable "bool" has ${typeof bool} data type and equal to "${bool}"`);
+        let undef = undefined;
+        console.log(`The variable "undef" has ${typeof undef} data type and equal to "${undef}"`);
+        let n = null;
+        console.log(`The variable "n" has ${typeof n} data type and equal to "${n}"`);
+        let sym = Symbol(`test`);
+        console.log(`The variable "sym" has data type: `, typeof sym, `and equal to `, sym);
+        let obj = {key: "value"};
+        console.log(`The variable "obj" has ${typeof obj} data type and equal to "${obj}"`);
+        let objContainingObj = { nestedObj: { key: "value" } };
+        console.log(`The variable "objContainingObj" has ${typeof objContainingObj} data type and equal to "${objContainingObj}"`);
+        let objContainingArr = { arr: [1, 2, 3] };
+        console.log(`The variable "objContainingArr" has ${typeof objContainingArr} data type and equal to "${objContainingArr}"`);
+        let objContainingDate = { date: new Date() };
+        console.log(`The variable "objContainingDate" has ${typeof objContainingDate} data type and equal to "${objContainingDate}"`);
+    </script>
+</body>
+</html>
