@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Числа та рядки</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>User input</h1>
+    <script>
+        const name = prompt(`What's Your name?: `);
+        const surname = prompt(`What's Your surname?: `);
+        const yearOfBirth = prompt(`In which year You were born?: `);
+
+        let currentYear = new Date().getFullYear();
+        let age = currentYear - parseInt(yearOfBirth); //I know, it's rough estimation...
+
+        console.log(`Hello, ${name} ${surname}, You are ${age} years old.`);
+    </script>
+</body>
+</html>
