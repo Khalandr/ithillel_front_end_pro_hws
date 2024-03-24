@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Просте число чи ні</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Просте число чи ні</h1>
+<script>
+    const number = parseInt(prompt("Введіть ціле число:"));
+    const isPrime = (num) => {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    };
+
+    if (number === 1) {
+        console.log("1 is neither prime nor composite number.");
+    } else if (isPrime(number)) {
+        console.log(`${number} is a prime number`);
+    } else {
+        console.log(`${number} is not a prime number`);
+    }
+</script>
+
+</body>
+</html>
