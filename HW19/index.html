@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Пошук потрібних чисел</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Пошук потрібних чисел</h1>
+<script>
+    const N = parseInt(prompt("Введіть ціле число N:"));
+
+    for (let i = 1; i <= 100; i++) {
+        const square = i * i;
+        if (square <= N) {
+            console.log(i);
+        } else {
+            break;
+        }
+    }
+</script>
+
+</body>
+</html>
