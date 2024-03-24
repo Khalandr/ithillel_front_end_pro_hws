@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Перевірка числа</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Перевірка числа</h1>
+<script>
+    const numberArray = Array.from(prompt("Please provide a number:"));
+    const allEqual = arr => arr.every( v => v === arr[0] );
+    const hasDuplicates = arr => (new Set(arr)).size !== arr.length;
+
+    console.log("Чи правда, що всі цифри однакові?");
+    console.log(allEqual(numberArray) ? "Yes, all digits are equal." : "No, not all digits are equal.");
+
+    console.log("Чи є серед цифр цифри однакові?")
+    console.log(hasDuplicates(numberArray) ? "Yes, there are duplicates of digits in this number." : "No, there aren't any duplicates of digits in this number.");
+
+
+</script>
+
+</body>
+</html>
