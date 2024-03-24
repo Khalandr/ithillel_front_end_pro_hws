@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Портрет користувача</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Портрет користувача</h1>
+<script>
+    const birthYear = prompt("В якому році Ви народились?");
+    if(birthYear == null || birthYear === ""){alert("Шкода, що Ви не захотіли ввести свій рік народження")};
+
+    const city = prompt("В якому місті Ви живите?")
+    if(city == null || city === ""){alert("Шкода, що Ви не захотіли ввести своє місто")};
+
+    const sport = prompt("Який Ваш улюбленний вид спорту?")
+    if(sport == null || sport === ""){alert("Шкода, що Ви не захотіли ввести свій любимий спорт")};
+
+    const currentYear = new Date().getFullYear();
+    const age = birthYear ? currentYear - birthYear : null;
+
+    let sportsChampions = {
+        "карате": "Мас Ояма",
+        "бокс": "Майк Тайсок",
+        "мма": "Конор МкГрегор"
+    };
+
+    let message = "";
+
+    message += birthYear ? `Тобі ${age} років.\n` : "";
+    message += city ? (city === "Київ" || city === "Вашингтон" || city === "Лондон" ? `Ти живеш у столиці ${getCountry(city)}.\n` : `Ти живеш у місті ${city}.\n`) : "";
+    message += sport ? (sportsChampions.hasOwnProperty(sport) ? `Круто! Хочеш бути як ${sportsChampions[sport]}?` : `Твій улюблений спорт це ${sport}`) : "";
+
+    alert(message || "Ви не ввели жодних даних");
+
+    function getCountry(city) {
+        switch (city) {
+            case "Київ":
+                return "України";
+            case "Вашингтон":
+                return "США";
+            case "Лондон":
+                return "Великої Британії";
+            default:
+                return "";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
