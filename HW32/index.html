@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Визначення середнього арифметичного</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Визначення середнього арифметичного</h1>
+<script>
+    /**
+     * Calculates the average of numeric elements in an array.
+     * @param {Array} arr - The input array.
+     * @returns {number} The average of numeric elements in the array.
+     */
+    function calculateAverage(arr) {
+        let sum = 0;
+        let count = 0;
+
+        arr.forEach(element => {
+            if (typeof element === 'number' && !isNaN(element)) {
+                sum += element;
+                count++;
+            }
+        });
+
+        let average = count > 0 ? sum / count : 0;
+        return average;
+    }
+
+    /**
+     * Generates an array with random elements of various types.
+     * @param {number} length - The length of the array to generate.
+     * @returns {Array} The randomly generated array.
+     */
+    function generateRandomArray(length) {
+        let randomArray = [];
+
+        for (let i = 0; i < length; i++) {
+            let randomNumber = Math.random();
+            let randomTypeIndex = Math.floor(Math.random() * 3); // Random index for type
+
+            switch (randomTypeIndex) {
+                case 0:
+                    randomArray.push(Math.floor(Math.random() * 100)); // Number
+                    break;
+                case 1:
+                    randomArray.push(String.fromCharCode(97 + Math.floor(Math.random() * 26))); // Character
+                    break;
+                case 2:
+                    randomArray.push(Math.random() > 0.5); // Boolean
+                    break;
+            }
+        }
+
+        return randomArray;
+    }
+
+
+    let length = 10;
+    let randomArray = generateRandomArray(length);
+    console.log("Generated Array:", randomArray);
+    let average = calculateAverage(randomArray);
+    console.log("Average of numeric elements:", average);
+
+
+</script>
+
+</body>
+</html>
