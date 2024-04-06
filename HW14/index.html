@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Добуток через карування</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Добуток через карування</h1>
+<script>
+    /**
+     * Creates a function that multiplies two numbers.
+     * @param {number} x - The first number to multiply.
+     * @returns {function} A function that takes the second number and returns their product.
+     */
+    function name(x) {
+        /**
+         * Multiplies the first number provided to the createMultiplier function by the second number.
+         * @param {number} y - The second number to multiply.
+         * @returns {number} The product of the two numbers.
+         */
+        return function(y) {
+            return x * y;
+        };
+    }
+
+    const result = name(5)(2);
+    console.log(result);
+
+</script>
+
+</body>
+</html>
