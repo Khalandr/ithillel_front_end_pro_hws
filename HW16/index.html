@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Сходи</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Сходи</h1>
+<script>
+    /**
+     * Represents a ladder object that allows climbing up and down steps.
+     * @type {Object}
+     */
+    let ladder = {
+        step: 0,
+
+        /**
+         * Increases the step by 1.
+         * @returns {Object} The ladder object.
+         */
+        up: function() {
+            this.step++;
+            return this;
+        },
+
+        /**
+         * Decreases the step by 1.
+         * @returns {Object} The ladder object.
+         */
+        down: function() {
+            this.step--;
+            return this;
+        },
+
+        /**
+         * Displays the current step.
+         * @returns {Object} The ladder object.
+         */
+        showStep: function() {
+            console.log(this.step);
+            return this;
+        }
+    };
+
+    ladder.up().up().down().showStep();
+
+
+</script>
+
+</body>
+</html>
