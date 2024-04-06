@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Функція з циклом</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Функція з циклом</h1>
+<script>
+
+    /**
+     * Prompts the user to enter a number greater than 100 up to a maximum of 10 iterations.
+     * If the user inputs a number less than or equal to 100, prompts the user to try again.
+     * If the user inputs a number greater than 100, or text, outputs the last input and exits the function.
+     */
+    function inputLoop() {
+        for (let i = 0; i < 10; i++) {
+            let input = prompt("Please enter a number greater than 100:");
+
+            if (input === null || input === "" || isNaN(input)) {
+                console.log("Invalid input. Please enter a number greater than 100.");
+            } else if (Number(input) <= 100) {
+                console.log("Number entered is less than or equal to 100. Please try again.");
+            } else {
+                console.log("Number greater than 100 or text entered. Last input: " + input);
+                return;
+            }
+        }
+
+        console.log("Maximum number of attempts (10) reached.");
+    }
+
+    inputLoop();
+
+</script>
+
+</body>
+</html>
