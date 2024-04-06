@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Функція видалення елементу</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Функція видалення елементу</h1>
+<script>
+
+    /**
+     * Removes the specified element from the array.
+     * @param {Array} array - The input array.
+     * @param {*} item - The item to remove from the array.
+     */
+    function removeElement(array, item) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === item) {
+                array.splice(i, 1);
+                i--;
+            }
+        }
+    }
+
+    const array = [1, 3, 4, 6, 2, 5, 7];
+    removeElement(array, 4);
+    console.log(array);
+
+
+</script>
+
+</body>
+</html>
